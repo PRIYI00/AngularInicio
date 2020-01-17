@@ -1,1 +1,29 @@
 <h1> {{title}} </h1>
+
+{{productos | json}}
+
+<div class="row">
+  <!-- Listado -->
+  <div class="col">
+      <ul class="list-group">
+          <li 
+            *ngFor="let p of productos" 
+            class="list-group-item"
+            (click)="seleccionarProducto(p)"> 
+            <b> {{p.producto}} </b> {{p.precio}}$
+          </li>
+      </ul>
+  </div>
+  <!-- Detalle -->
+  <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{pSeleccionado.imagen}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"> {{pSeleccionado.producto}} </h5>
+          <p class="card-text"> {{pSeleccionado.precio}} </p>
+          <p class="card-text"> {{pSeleccionado.categoria.categoria}} </p>
+        </div>
+      </div>
+  </div>
+</div>
+
