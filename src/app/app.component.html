@@ -22,6 +22,9 @@
           <h5 class="card-title"> {{pSeleccionado.producto}} </h5>
           <p class="card-text"> {{pSeleccionado.precio}} </p>
           <p class="card-text"> {{pSeleccionado.categoria.categoria}} </p>
+          <p class="card-text" *ngFor="let h of pSeleccionado.historico"> 
+              {{h.fecha}} - {{h.precio}}
+          </p>    
         </div>
       </div>
   </div>
