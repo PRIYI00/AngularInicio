@@ -10,10 +10,12 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class PokemonRestComponent implements OnInit {
 
   pokemon: Pokemon;
+  mensaje: string;
 
   constructor(private pokemonService: PokemonService) { 
     console.trace('PokemonRestComponent Constructor');
-    this.pokemon = new Pokemon('pikachu');
+    this.mensaje = '';
+    this.pokemon = new Pokemon('charmander');
   }
 
   ngOnInit() {
@@ -26,9 +28,19 @@ export class PokemonRestComponent implements OnInit {
     this.pokemonService.getPokemon(this.pokemon.nombre).subscribe(
       data => {
         console.debug('Petición Correcta data %o', data);
+        this.pokemon.id = data.id;
+        this.pokemon.nombre = data.name;
+        this.pokemon.imagen = data.sprites.front_default;
+        this.pokemon.habilidades.push(data.abilities[0].ability.name);
+        this.pokemon.habilidades.push(data.abilities[1].ability.name);
+
+        this.mensaje = 'Pokemon cargado desde https://pokeapi.co/';
+
+        // Conseguir su Habilidad.
       },
       error => {
         console.warn('Petición Erronea data %o', error);
+        this.mensaje = 'No Existe Pokemon X';
       },
       () => {
         console.trace('Esto se hace Siempre');

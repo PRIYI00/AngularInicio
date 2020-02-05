@@ -1,0 +1,22 @@
+<h1> {{titulo}} </h1>
+
+<div class="row">
+    <div class="col">
+        <label> Nombre: {{jugador}} </label> <br>
+        <input type="text" [(ngModel)]="jugador">
+        <button (click) = 'habilitarJuego()'> Jugar </button>
+        
+        <hr>
+        
+        <p> {{numeroClicks}} </p>
+        <button (click) = 'contarClicks()' [disabled] = 'isDisabled'> DALE! </button>
+    </div>
+    <div class="col">
+        <h2> Ranking </h2>
+        <ul class="list-group"> 
+            <li *ngFor = "let j of ranking | keyvalue" class="list-group-item">
+                <b> {{j.key}} </b> {{j.value}}
+            </li>
+        </ul>
+    </div>
+</div>

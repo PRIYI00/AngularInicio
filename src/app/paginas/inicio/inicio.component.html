@@ -1,1 +1,30 @@
-<p>inicio works!</p>
+<h1> {{titulo}} </h1>
+
+<button (click) = 'contarClicks()'> DALE! </button>
+<p> {{numeroClicks}} </p>
+ 
+<hr>
+
+<div [class] = "claseSeleccionada"> COLOR que cambia al pulsar los botones. </div>
+<button (click)="claseSeleccionada='rojo'"> Color Rojo </button>
+<button (click)="claseSeleccionada='verde'"> Color Verde </button>
+
+<hr>
+
+<p> La propiedad <code> hidden </code> es de angular, tambien podriamos haber utilizado ngIF. </p>
+<p [hidden]="!visible">
+    Adiós con Hidden.
+</p>
+<p *ngIf = "visible">
+    Adiós con ngIf.
+</p>
+<button (click)="decirAdios()"> Decir adiós </button>
+
+<hr>
+
+<p> Para usar banana in a box recordar importar el modulo de <code> FormsModule </code> </p>
+<label> Nombre: {{jugador}} </label>
+<br>
+<input type="text" [(ngModel)]="jugador">
+
+<hr>

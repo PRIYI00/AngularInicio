@@ -1,0 +1,56 @@
+// Soporta comentarios de linea, los cuales no se ven en el CSS.
+
+$color_teal: #008080;
+$color_green: green;
+$color_black: black;
+$color_red: red;
+
+h1 {
+    color: $color_teal;
+}
+
+// Nesting => p code.
+p {
+    code {
+        color: $color_green;
+        background-color: $color_black;
+        padding: 2px 3px;
+    }
+}
+
+// Mixins o Funciones para Reutilizar.
+@mixin redondear($radio) {
+    border-radius: $radio;
+    border: 1px solid $color_teal;
+    padding: 10px;
+}
+
+// Usar Mixin (como un metodo en Java).
+.borde10 {
+    @include redondear(10px);
+}
+
+.borde50 {
+    @include redondear(50%);
+}
+
+// Extend/Inheritance
+%boton {
+    border: 1px solid $color_black;
+    border-radius: 10px;
+    padding: 10px;
+
+    &:hover {
+        background-color: $color_teal;
+    }
+}
+
+.boton-verde {
+    @extend %boton;
+    color: $color_green;
+}
+
+.boton-rojo {
+    @extend %boton;
+    color: $color_red;
+}
