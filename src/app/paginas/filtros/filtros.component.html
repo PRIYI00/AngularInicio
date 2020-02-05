@@ -1,1 +1,22 @@
-<p>filtros works!</p>
+<h1> Pipes o Filtros </h1>
+<h2> Ejemplos de Filtros de Angular. </h2>
+<a href="https://angular.io/api?type=pipe" target="_blank"> API de Filtros </a> <br>
+<pre>{{coche | json}}</pre>
+
+<hr>
+
+<h3> Filtrando Listas </h3>
+
+<input type="search" [(ngModel)] = "busqueda" placeholder="buscar por nombre"> 
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor = "let animal of animales | animalesFiltro : busqueda">
+        <img src="{{animal.Imagen}}" class="circle"/> 
+        <span> {{animal.Nombre}} </span> 
+    </li>
+</ul>
+
+<hr>
+
+<h3> Custom Filter </h3>
+<a href="https://angular.io/guide/pipes" target="_blank"> Documentación Oficial </a>

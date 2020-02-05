@@ -1,1 +1,39 @@
-<p>directivas works!</p>
+<h2> Directivas </h2>
+<p> Hay tres tipo de directivas en Angular: </p>
+
+<dl>
+    <dt> Components:</dt> <dd> Son directivas con una plantilla de html. </dd>
+    <dt> Estructurales: </dt> <dd> Cambian el DOM añdiendo o removiendo elementos, por jemplo *ngIf. </dd>
+    <dt> Attribute directive: </dt> <dd> Cambian la apariencia de un elemento del DOM, por ejemplo NgStyle. </dd>
+</dl>
+
+<hr>
+
+<p> Podemos crear nuestras propias directivas usando <code> ng generate directive $nombre_de_nuestra_directiva. </code> </p>
+<p appHello = 'blue'> En esta etiqueta estamos usando nuestra directiva <code> appHello. </code> </p>
+
+<hr>
+
+<span appHello = 'teal'> Usamos aqui la Directiva otra vez. </span>
+
+<hr>
+
+<input type="radio" name="color" (click) = "colorSeleccionado='pink'"> Rosa <br>
+<input type="radio" name="color" (click) = "colorSeleccionado='orange'"> Naranja <br>
+<input type="radio" name="color" (click) = "colorSeleccionado='peru'"> Marron <br> 
+
+<p>
+    <input type="color" [(ngModel)] = "colorSeleccionado">
+    Elige color Personalizado.
+</p>
+
+<p appSubrayar = 'red'> No es verdad angel de amor. </p>
+<p [appSubrayar] = "'green'"> Que en esta apartada orilla. </p>
+<p [appSubrayar] = "colorSeleccionado"> Mas clara la Luna brilla y se respira mejor? </p>
+
+<hr>
+
+
+ 
+
+
