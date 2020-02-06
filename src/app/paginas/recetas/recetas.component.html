@@ -1,0 +1,15 @@
+<h1> {{titulo}} </h1>
+
+<div class="row">
+        <div class="col">
+            <h2> Recetas </h2>
+            <ul class="list-group"> 
+                <li *ngFor = "let receta of recetas" class="list-group-item">
+                    <b> {{receta.nombre}} </b> <br> {{receta.cocinero}}
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            
+        </div>
+    </div>

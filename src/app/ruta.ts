@@ -32,5 +32,10 @@ export const RUTA = [{
         "ruta": "/filtros",
         "nombre": "Filtros",
         "icono": "fas fa-print"
+    },
+    {
+        "ruta": "/recetas",
+        "nombre": "Recetas",
+        "icono": "fas fa-scroll"
     }
 ]

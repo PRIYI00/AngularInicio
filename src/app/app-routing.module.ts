@@ -7,6 +7,7 @@ import { EstilosComponent } from './paginas/estilos/estilos.component';
 import { JuegoComponent } from './paginas/juego/juego.component';
 import { DirectivasComponent } from './paginas/directivas/directivas.component';
 import { FiltrosComponent } from './paginas/filtros/filtros.component';
+import { RecetasComponent } from './paginas/recetas/recetas.component';
 
 // Definir las Rutas de la App de Angular 
 // El Path debe coincidir con [RouterLink] del componente Navbar.
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'estilos', component: EstilosComponent},
   {path: 'juego', component: JuegoComponent},
   {path: 'directivas', component: DirectivasComponent},
-  {path: 'filtros', component: FiltrosComponent}
+  {path: 'filtros', component: FiltrosComponent},
+  {path: 'recetas', component: RecetasComponent}
 ];
 
 @NgModule({
