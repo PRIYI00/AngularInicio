@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-const TIEMPO_JUEGO = 2000;
-
+const TIEMPO_JUEGO = 4000;
+ 
 @Component({
   selector: 'app-juego',
   templateUrl: './juego.component.html',
@@ -13,7 +13,7 @@ export class JuegoComponent implements OnInit {
   jugador: string;
   numeroClicks: number;
   ranking: Map<string, number>;
-  isDisabled: boolean;
+  isActivo: boolean;
 
   constructor() { 
     console.trace('JuegoComponent constructor');
@@ -21,7 +21,7 @@ export class JuegoComponent implements OnInit {
     this.jugador = '';
     this.numeroClicks = 0;
     this.ranking = new Map();
-    this.isDisabled = true;
+    this.isActivo = false;
   } // Constructor
 
   ngOnInit() {
@@ -30,7 +30,15 @@ export class JuegoComponent implements OnInit {
 
   habilitarJuego() {
     console.trace('habilitarJuego');
-    this.isDisabled = !this.isDisabled;
+    this.isActivo = true;
+
+    setTimeout(() => {
+      console.debug('Termina TimeOut');
+      this.ranking.set(this.jugador, this.numeroClicks);
+      this.isActivo = false;
+      this.numeroClicks = 0;
+      this.jugador = '';
+    }, TIEMPO_JUEGO);
   } // habilitarJuego
 
   contarClicks() {

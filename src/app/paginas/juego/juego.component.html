@@ -2,14 +2,14 @@
 
 <div class="row">
     <div class="col">
-        <label> Nombre: {{jugador}} </label> <br>
+        <label> Nombre Jugador: {{jugador}} </label> <br>
         <input type="text" [(ngModel)]="jugador">
-        <button (click) = 'habilitarJuego()'> Jugar </button>
+        <button (click) = 'habilitarJuego()' class="btn btn-success"> Jugar </button>
         
         <hr>
-        
-        <p> {{numeroClicks}} </p>
-        <button (click) = 'contarClicks()' [disabled] = 'isDisabled'> DALE! </button>
+         
+        <span class="numero"> {{numeroClicks}} </span>
+        <button (click) = 'contarClicks()' [disabled] = '!isActivo' class="btn btn-primary btn-block"> DALE! </button>
     </div>
     <div class="col">
         <h2> Ranking </h2>

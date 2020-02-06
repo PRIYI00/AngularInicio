@@ -12,7 +12,7 @@ export class FiltrosComponent implements OnInit {
   animales: Array<any>;
   soloTipos: Array<string>;
   tipo: string;
-
+ 
   constructor() { 
     console.trace('constructor FiltrosComponent');
     this.animales = ANIMALES;
