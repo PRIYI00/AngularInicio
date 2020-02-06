@@ -3,14 +3,28 @@
 <a href="https://angular.io/api?type=pipe" target="_blank"> API de Filtros </a> <br>
 <pre>{{coche | json}}</pre>
 
+<p> {{coche.nombre | uppercase}} </p>
+<p> {{coche.color | lowercase}} </p>
+<p> {{coche.precio | currency : 'EUR': '':'2.2-2'}} &euro; </p>
+<p> {{coche.nombre | slice : 0 : 5}} </p>
+<p> {{coche.nombre | slice : 5}} </p>
+
 <hr>
 
 <h3> Filtrando Listas </h3>
 
 <input type="search" [(ngModel)] = "busqueda" placeholder="buscar por nombre"> 
 
+<select [(ngModel)] = "tipo">
+    <option selected> TODOS </option>
+    <option *ngFor = "let t of soloTipos"> {{t}} </option>
+</select>
+
+{{soloTipos | json}}
+Tipo Seleccionado --> {{tipo}}
+
 <ul class="list-group">
-    <li class="list-group-item" *ngFor = "let animal of animales | animalesFiltro : busqueda">
+    <li class="list-group-item" *ngFor = "let animal of animales | animalesFiltro : busqueda : tipo">
         <img src="{{animal.Imagen}}" class="circle"/> 
         <span> {{animal.Nombre}} </span> 
     </li>
@@ -20,3 +34,5 @@
 
 <h3> Custom Filter </h3>
 <a href="https://angular.io/guide/pipes" target="_blank"> Documentación Oficial </a>
+
+

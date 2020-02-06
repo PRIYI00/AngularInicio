@@ -5,3 +5,15 @@
     <router-outlet></router-outlet>
 </main>
 
+<hr>
+
+<footer>
+    <!-- {{global | json}} -->
+    <ul *ngFor = "let g of global">
+        <li> Usuario: {{g.usuario}} </li>
+        <li> Nombre: {{g.nombre}} </li>
+        <li> GitHub: <a href="{{g.github}}" class="fab fa-github"> {{g.github}} </a> </li>
+        <li> Version: {{g.version}} </li>
+    </ul>
+</footer>
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RUTA } from '../../ruta';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  rutas : Array<any>;
+
+  constructor() { 
+    console.trace('NavbarComponent Constructor');
+    this.rutas = RUTA;
+  } // Constructor
 
   ngOnInit() {
-  }
+    console.trace('NavbarComponent ngOnInit');
+  } // ngOnInit
 
-}
+} // NavbarComponent
