@@ -9,11 +9,13 @@
 
 <footer>
     <!-- {{global | json}} -->
-    <ul *ngFor = "let g of global">
-        <li> Usuario: {{g.usuario}} </li>
-        <li> Nombre: {{g.nombre}} </li>
-        <li> GitHub: <a href="{{g.github}}" class="fab fa-github"> {{g.github}} </a> </li>
-        <li> Version: {{g.version}} </li>
-    </ul>
+    <div> 
+        <ul class="p-2" *ngFor = "let g of global">
+            <li> Usuario: {{g.usuario}} </li>
+            <li> Nombre: {{g.nombre}} </li>
+            <li> GitHub: <a href="{{g.github}}" class="fab fa-github" target="_blank"> {{g.github}} </a> </li>
+            <li> Version: {{g.version}} </li>
+        </ul>
+    </div>
 </footer>
 

@@ -9,10 +9,15 @@ import { RECETAS } from '../../recetas';
 export class RecetasComponent implements OnInit {
 
   recetas : Array<any>;
+  recetaSeleccionada: any;
+  checkGluten: boolean;
+  busqueda: string;
 
   constructor() { 
     console.trace('RecetasComponent Constructor');
     this.recetas = RECETAS;
+    this.checkGluten = false;
+    this.busqueda = '';
   } // Constructor
 
   ngOnInit() {
