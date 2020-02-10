@@ -1,4 +1,45 @@
-<h2> Tareas </h2>
-<p> Ejemplo de Provider o Servicio para hacer un CRUD completo contra un servicio REST. </p>
+<main class="container-fluid contnedorImagen">
+    <div class="container miContenedor">
+        <h2> Tareas </h2>
+        <p> Ejemplo de Provider o Servicio para hacer un CRUD completo contra un servicio REST. </p>
 
-{{tareas | json}}
+        <ng-template [ngIf]="tareaEliminada" [ngIfElse]="lista">
+            <div class="alert alert-primary" role="alert">
+                La Tarea con ID - <b> {{tareaEliminada.id}} </b> y con Titulo - <b> {{tareaEliminada.titulo}} </b> ha sido Eliminada.
+            </div>
+        </ng-template>
+
+        <ng-template [ngIf]="mensaje">
+            <div class="alert alert-danger" role="alert">
+                Nombre de Tarea Incorrecto
+            </div>
+        </ng-template>
+
+        <ng-template #lista>
+            <div class="alert alert-primary" role="alert">
+                Lista de Tareas Pendientes.
+            </div>
+        </ng-template>
+            
+        <div class="p-4">
+            <input type="text" [(ngModel)] = "tituloNuevo">
+            <button (click) = "nuevaTarea()"> Crear Nueva Tarea </button>
+        </div>
+        <div>
+            <ul> 
+                <li *ngFor = "let tarea of tareas">
+                    <div class="row">
+                        <div class="col">
+                            <input type="checkbox" [checked] = "tarea.completada" (click) = "editarEstado(tarea)"> - 
+                            <b> {{tarea.id}} </b> - 
+                            <span class="titulo {{(tarea.completada)?'completada':''}}"> {{tarea.titulo}} </span>
+                        </div>
+                        <div class="col">
+                            <button class="text-danger" (click) = "eliminarTarea(tarea)"> Eliminar </button>
+                        </div>
+                    </div>  
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>

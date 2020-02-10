@@ -15,20 +15,31 @@ export class TareasService implements ITareaService{
 
   listar(): Observable<Tarea[]> {
     const url = `http://localhost:3000/tareas`;
+
     console.debug(`GET ${url}`);
     console.trace("TareasService listar " + url);
+
     return this.http.get<Tarea[]>(url);
   } // Listar
   detalle(id: number): Observable<Tarea> {
     throw new Error("Method not implemented.");
   } // Detalle
   crear(tarea: Tarea): Observable<Tarea> {
-    throw new Error("Method not implemented.");
+    const url = `http://localhost:3000/tareas`;
+    console.debug(`POST ${url} tarea %o `, tarea);
+
+    return this.http.post<Tarea>(url, tarea);
   } // Crear
   modificar(tarea: Tarea): Observable<Tarea> {
-    throw new Error("Method not implemented.");
+    const url = `http://localhost:3000/tareas/${tarea.id}`;
+    console.debug('PUT %s Modificar %o', url, tarea);
+
+    return this.http.put<Tarea>(url, tarea);
   } // Modificar
   eliminar(id: number): Observable<Tarea> {
-    throw new Error("Method not implemented.");
+    const url = `http://localhost:3000/tareas/${id}`;
+    console.debug('DELETE %s ', url);
+
+    return this.http.delete<Tarea>(url);
   } // Eliminar
 }

@@ -1,0 +1,30 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    span.titulo {
+        font-weight: 500;
+    }
+
+    span.completada {
+        text-decoration: line-through;
+        font-weight: 100;
+        color: lightgray;
+    }
+}
+
+.contnedorImagen {
+    background-image: url(../../../assets/image/la-curiosa-relacion-entre-el-cafe-y-el-cuarto-de-bano.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 30px;
+}
+
+.miContenedor {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: rgb(255, 255, 255, 0.8);
+    padding: 30px;
+}
+

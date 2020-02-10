@@ -1,5 +1,5 @@
 {
-  "tareas":[
+  "tareas": [
     {
       "id": 1,
       "titulo": "Crear Datos en Json",
@@ -19,6 +19,21 @@
       "id": 4,
       "titulo": "Crear Provider",
       "completada": false
+    },
+    {
+      "id": 5,
+      "titulo": "Mejorar Estilo de la Pagina",
+      "completada": false
+    },
+    {
+      "id": 6,
+      "titulo": "Practicar Angular en Casa",
+      "completada": false
+    },
+    {
+      "id": 7,
+      "titulo": "Mostrar ID y Titulo de la Tarea Eliminada",
+      "completada": true
     }
   ],
   "posts": [
