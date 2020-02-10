@@ -21,7 +21,7 @@ export const RUTA = [{
     {
         "ruta": "/estilos",
         "nombre": "Estilos",
-        "icono": "fas fa-remove-format"
+        "icono": "fas fa-paint-brush"
     },
     {
         "ruta": "/directivas",
@@ -41,6 +41,6 @@ export const RUTA = [{
     {
         "ruta": "/tareas",
         "nombre": "Tareas",
-        "icono": "fas fa-scroll"
+        "icono": "fas fa-blender"
     }
 ]
