@@ -1,4 +1,26 @@
 {
+  "tareas":[
+    {
+      "id": 1,
+      "titulo": "Crear Datos en Json",
+      "completada": true
+    },
+    {
+      "id": 2,
+      "titulo": "Crear Modelo con Interfaz",
+      "completada": false
+    },
+    {
+      "id": 3,
+      "titulo": "Tomar Cafe y Descanso a la 10:30",
+      "completada": true
+    },
+    {
+      "id": 4,
+      "titulo": "Crear Provider",
+      "completada": false
+    }
+  ],
   "posts": [
     {
       "id": 1,

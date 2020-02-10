@@ -22,6 +22,7 @@ import { RecetasComponent } from './paginas/recetas/recetas.component';
 import { RecetasPipe } from './pipes/recetas.pipe';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
+import { TareasComponent } from './paginas/tareas/tareas.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SaludarComponent } from './paginas/saludar/saludar.component';
     RecetasComponent,
     RecetasPipe,
     Error404Component,
-    SaludarComponent
+    SaludarComponent,
+    TareasComponent
   ],
   imports: [
     BrowserModule,
