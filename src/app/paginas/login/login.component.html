@@ -1,0 +1,52 @@
+<h1> Iniciar Sesión. </h1>
+
+<h2> Formulario Reactivo. </h2>
+
+<div class="row">
+    <div class="col">
+
+        <pre> {{formulario.value | json}} </pre>
+        <pre> {{formulario.status | json}} </pre>
+
+        <form [formGroup] = "formulario" (ngSubmit) = "enviar(formulario.value)">
+            <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.dirty"
+                class="text-danger">Minimo 2 caracteres Maximo 100</small>
+
+            <small *ngIf="formulario.controls.nombre.valid"
+                class="text-success"> Nombre correcto </small> 
+
+            <input type="text" formControlName = "nombre"
+                placeholder = "Nombre o Email"
+                class = "form-control"/>
+
+            <small *ngIf="formulario.controls.password.invalid && formulario.controls.password.dirty"
+                class="text-danger" >Minimo 6 caracteres Maximo 8 </small>
+
+            <small *ngIf="formulario.controls.password.valid"
+                class="text-success"> Contraseña Correcta </small> 
+
+            <input type="password" formControlName = "password"
+                placeholder = "Contraseña"
+                class = "form-control"/>
+
+            <input  type="submit" 
+                    [disabled] = "formulario.invalid" 
+                    value="Enviar"
+                    class="btn btn-primary btn-block">
+        </form>
+    </div> <!-- Cierre de la Columna Uno -->
+    <div class="col">
+        
+        <h3>FormControl para <b>password</b></h3>
+        <a href="https://angular.io/api/forms/FormControl" target="_blank">Documentacion</a>
+    
+        <pre>valid: {{ formulario.controls.password.valid | json }}</pre>      
+        <pre>invalid: {{ formulario.controls.password.invalid | json }}</pre>      
+        <pre>dirty: {{ formulario.controls.password.dirty | json }}</pre>      
+        <pre>pristine: {{ formulario.controls.password.pristine | json }}</pre>      
+        <pre>touched: {{ formulario.controls.password.touched | json }}</pre>      
+        <pre>untouched: {{ formulario.controls.password.untouched | json }}</pre>      
+        <pre>Errors: {{ formulario.controls.password.errors | json }}</pre> 
+
+    </div> <!-- Cierre de la Columna Dos -->
+</div> <!-- Cierre del Row -->

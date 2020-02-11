@@ -11,6 +11,9 @@ import { RecetasComponent } from './paginas/recetas/recetas.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
+import { PrivadoComponent } from './paginas/privado/privado.component';
+import { LoginGuard } from './guards/login.guard';
+import { LoginComponent } from './paginas/login/login.component';
 
 // Definir las Rutas de la App de Angular 
 // El Path debe coincidir con [RouterLink] del componente Navbar.
@@ -25,6 +28,9 @@ const routes: Routes = [
   {path: 'recetas', component: RecetasComponent},
   {path: 'saludar/:pNombre', component: SaludarComponent},
   {path: 'tareas', component: TareasComponent},
+  // Vamos a proteger esta Ruta con una Guarda.
+  {path: 'privado', component: PrivadoComponent, canActivate: [LoginGuard]},
+  {path: 'login', component: LoginComponent},
   {path: '**', component: Error404Component}
 ];
 

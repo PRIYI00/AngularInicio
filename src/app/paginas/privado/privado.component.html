@@ -1,0 +1,13 @@
+<h1 class="text-danger"> Zona Privada </h1>
+
+<p> Solo pueden Acceder Usuarios Logeados. </p>
+<p> Para Proteger el acceso a esta Ruta debemos usar una Guarda y definirla en app-routing-module. </p>
+
+<code> path: 'privado', component: PrivadoComponent, canActivate: [LoginGuard] </code>
+
+<dl>
+    <dt> canActivate </dt>
+    <dd> Guarda para indicar si se puede activar esa ruta. </dd>
+    <dt> LoginGuard </dt>
+    <dd> Guarda creada por nosotros, que retornara true o false. </dd>
+</dl>

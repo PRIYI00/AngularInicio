@@ -12,6 +12,7 @@ export class TareasComponent implements OnInit {
   tareas: Array<Tarea>;
   tituloNuevo: string;
   tareaEliminada: Tarea;
+  tareaCreada: Tarea;
   mensaje: boolean;
 
   constructor(private servicioTarea: TareasService) { 
@@ -79,7 +80,8 @@ export class TareasComponent implements OnInit {
       this.servicioTarea.crear(tareaNueva).subscribe(dato => {
         console.debug('Crear en TareasComponent una Nueva Tarea %o ', dato);
         this.tituloNuevo = '';
-        this.cargarTareas()
+        this.tareaCreada = dato;
+        this.cargarTareas();
         }
       );
     } else {

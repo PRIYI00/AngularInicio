@@ -4,14 +4,20 @@
         <p> Ejemplo de Provider o Servicio para hacer un CRUD completo contra un servicio REST. </p>
 
         <ng-template [ngIf]="tareaEliminada" [ngIfElse]="lista">
-            <div class="alert alert-primary" role="alert">
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
                 La Tarea con ID - <b> {{tareaEliminada.id}} </b> y con Titulo - <b> {{tareaEliminada.titulo}} </b> ha sido Eliminada.
             </div>
         </ng-template>
 
         <ng-template [ngIf]="mensaje">
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 Nombre de Tarea Incorrecto
+            </div>
+        </ng-template>
+
+        <ng-template [ngIf]="tareaCreada">
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                La Tarea con ID - <b> {{tareaCreada.id}} </b> y con Titulo - <b> {{tareaCreada.titulo}} </b> ha sido Creado con exito.
             </div>
         </ng-template>
 
