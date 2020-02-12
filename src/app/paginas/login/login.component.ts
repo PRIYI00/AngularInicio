@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,9 @@ export class LoginComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private builder: FormBuilder) { 
+  constructor(private builder: FormBuilder, 
+              private router: Router, 
+              private usuarioService: UsuariosService) { 
     console.trace('LoginComponent Constructor');
 
     // Construir Formulario
@@ -31,6 +35,19 @@ export class LoginComponent implements OnInit {
 
   enviar(values: any) {
     console.trace('LoginComponent Enviar Formulario %o ', values);
-  }
+
+    const nombre = values.nombre;
+    const password = values.password;
+    const uLogeado = this.usuarioService.login(nombre, password);
+
+    if (uLogeado) {
+      console.trace('Usuario logeado con exito %o', uLogeado);
+      this.router.navigate(['privado']);
+    } else {
+      console.warn('Usuario NO logeado');
+      // TODO cambiar alert
+      alert('Por favor prueba de nuevo a logearte');
+    }
+  } // Enviar
 
 } // LoginComponent

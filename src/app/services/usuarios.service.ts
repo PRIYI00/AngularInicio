@@ -8,7 +8,7 @@ import { Usuario } from '../model/usuario';
 export class UsuariosService implements IUsuarioService {
 
   private isLogged: boolean;
-  private usuario:Usuario;
+  private usuario: Usuario;
 
   constructor() { 
     console.trace('UsuariosService Constructor');
@@ -24,7 +24,7 @@ export class UsuariosService implements IUsuarioService {
   login(nombre: string, password: string): Usuario {
     console.trace('UsuariosService Login nombre %s password %s', nombre, password);
     const NOMBRE = 'admin';
-    const PASS = 'admin';
+    const PASS = 'admin123';
 
     let usuarioBuscar: Usuario;
 
@@ -45,7 +45,7 @@ export class UsuariosService implements IUsuarioService {
     return usuarioBuscar;
   } // Login
 
-  cerrarSesion(idUsuario: number) {
+  cerrarSesion() {
     console.trace('Metodo Cerrar Sesion UsuarioService');
     this.isLogged = false;
   }

@@ -42,8 +42,8 @@ export const RUTA = [{
         "ruta": "/tareas",
         "nombre": "Tareas",
         "icono": "fas fa-blender"
-    },
-    {
+    }
+    /*{
         "ruta": "/privado",
         "nombre": "Privado",
         "icono": "fas fa-hand-paper"
@@ -52,5 +52,5 @@ export const RUTA = [{
         "ruta": "/login",
         "nombre": "Login",
         "icono": "fas fa-sign-in-alt"
-    }
+    }*/
 ]
