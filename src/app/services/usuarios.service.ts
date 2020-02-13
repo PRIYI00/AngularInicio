@@ -7,18 +7,25 @@ import { Usuario } from '../model/usuario';
 })
 export class UsuariosService implements IUsuarioService {
 
+  private storage: any;
   private isLogged: boolean;
   private usuario: Usuario;
 
   constructor() { 
     console.trace('UsuariosService Constructor');
+    this.storage = window.sessionStorage;
     this.isLogged = false;
     this.usuario = undefined;
   } // Constructor
 
   estaLogeado(): boolean {
     console.trace('UsuarioService estaLogeado');
-    return this.isLogged;
+    const estaLog = this.storage.getItem('isLogged');
+    if (estaLog) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   login(nombre: string, password: string): Usuario {
@@ -36,10 +43,10 @@ export class UsuariosService implements IUsuarioService {
       usuarioBuscar.password = password;
       usuarioBuscar.id = 99;
       // Marcar que esta Logeado.
-      this.isLogged = true;
+      this.storage.setItem('isLogged', true);
     } else {
       console.trace('Usuario no Encontrado.');
-      this.isLogged = false;
+      this.storage.setItem('isLogged', false);
     }
 
     return usuarioBuscar;
@@ -47,6 +54,6 @@ export class UsuariosService implements IUsuarioService {
 
   cerrarSesion() {
     console.trace('Metodo Cerrar Sesion UsuarioService');
-    this.isLogged = false;
+    this.storage.removeItem('isLogged');
   }
 } // UsuariosService
