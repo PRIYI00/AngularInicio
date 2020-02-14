@@ -39,7 +39,13 @@ export class ArraysComponent implements OnInit {
     // this.total = this.frutas.reduce((previous, current) => {return previous.precio + current.precio});
     
     // Modo Reducido (Lo de Arriba en una Linea) 
-    this.total = this.frutas.map(elemento => elemento.precio).reduce((current, previous) => current + previous);
+    this.total = this.frutas.map(elemento => {
+        console.debug(elemento, elemento.precio);
+        return elemento.precio;
+      }).reduce((current, previous) => {
+        console.debug(current, previous);
+        return current + previous
+      });
 
     this.totalDescuento = this.frutas.reduce((previous, current) => (previous + (current.precio - ((current.precio * current.descuenta) / 100))),0);
 

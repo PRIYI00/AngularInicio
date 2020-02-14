@@ -1,0 +1,11 @@
+<h1> Comunicación entre Componentes. </h1>
+<div class="row"> 
+    <!-- Listado -->
+    <div class="col"> 
+        <app-listado [frutas] = "frutas" (pasameLaFruta) = "recogerEvento($event)"></app-listado>
+    </div>
+    <!-- Detalle -->
+    <div class="col"> 
+        <app-detalle [fruta] = "frutaSeleccionada"></app-detalle>
+    </div>
+</div>

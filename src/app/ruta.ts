@@ -42,6 +42,11 @@ export const RUTA = [{
         "ruta": "/tareas",
         "nombre": "Tareas",
         "icono": "fas fa-blender"
+    },
+    {
+        "ruta": "/compras",
+        "nombre": "Input Output",
+        "icono": "fas fa-keyboard"
     }
     /*{
         "ruta": "/privado",
